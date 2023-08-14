@@ -70,3 +70,18 @@ for (name, value) in vars {
   assert_eq!("frobnicated", value);
 }
 ```
+
+If you just want to mock the environment in unit-tests,
+the [env::EnvProvider] trait is implemented for `HashMap<String, String>`:
+
+```rust
+use std::collections::HashMap;
+use potenv::Potenv;
+
+let mut mock = HashMap::new();
+mock.insert("name".into(), "value".into());
+
+let vars = Potenv::new(mock, false)
+  .evaluate([".env"])
+  .unwrap();
+```
