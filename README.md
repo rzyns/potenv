@@ -11,13 +11,13 @@ A Rust implementation of the [POSIX-compliant dotenv file format specification](
 Load environment variables from a `.env` file in the current working directory:
 
 ```rust
-potenv::load(vec![".env"]).expect("Failed to load .env file.");
+potenv::load([".env"]).expect("Failed to load .env file.");
 ```
 
 For convenience, an iterator over the loaded variables is returned:
 
 ```rust
-let vars = potenv::load(vec![".env"]).unwrap();
+let vars = potenv::load([".env"]).unwrap();
 for (name, value) in vars {
   assert_eq!(value, std::env::var(name).unwrap());
 }
@@ -29,7 +29,7 @@ If you just want to evaluate the dotenv files without loading them into the envi
 use potenv::Potenv;
 
 let vars = Potenv::default()
-  .evaluate(vec![".env"])
+  .evaluate([".env"])
   .unwrap();
 ```
 
@@ -42,7 +42,7 @@ use potenv::Potenv;
 
 let vars = Potenv::default()
   .override_env(true)
-  .load(vec![".env"])
+  .load([".env"])
   .unwrap();
 ```
 
@@ -64,7 +64,7 @@ impl EnvProvider for Frobnicator {
 }
 
 let vars = Potenv::new(Frobnicator, false)
-  .evaluate(vec![".env"])
+  .evaluate([".env"])
   .unwrap();
 for (name, value) in vars {
   assert_eq!("frobnicated", value);
