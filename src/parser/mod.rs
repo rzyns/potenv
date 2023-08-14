@@ -10,7 +10,8 @@ use self::ast::*;
 use crate::tokenizer::{
     err::SyntaxError,
     token::{Token, TokenKind},
-    Tokenizer, TokenizerResult,
+    Tokenizer,
+    TokenizerResult,
 };
 
 #[derive(Debug, Error, PartialEq, Eq)]
