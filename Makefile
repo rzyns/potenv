@@ -1,4 +1,4 @@
-.PHONY: coverage
+.PHONY: coverage docs
 
 coverage:
 	cargo llvm-cov --html --open --ignore-filename-regex 'test(s|_utils)\.rs'

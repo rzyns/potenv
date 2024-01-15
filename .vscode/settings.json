@@ -1,5 +1,10 @@
 {
+  "[rust]": {
+    "editor.formatOnSave": true,
+    "editor.formatOnSaveMode": "file"
+  },
   "rust-analyzer.checkOnSave": true,
   "rust-analyzer.check.allTargets": true,
+  "rust-analyzer.rustfmt.rangeFormatting.enable": true,
   "json.format.enable": false
 }
