@@ -15,6 +15,7 @@ mod test_utils;
 mod tokenizer;
 
 #[derive(Debug, Error)]
+#[non_exhaustive]
 pub enum PotenvError {
     #[error(transparent)]
     ParseError(#[from] ParseError),

@@ -15,6 +15,7 @@ use crate::tokenizer::{
 };
 
 #[derive(Debug, Error, PartialEq, Eq)]
+#[non_exhaustive]
 pub enum ParseError {
     #[error("Unexpected end of input")]
     Eof,

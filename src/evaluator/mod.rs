@@ -13,6 +13,7 @@ mod tests;
 pub type Scope = HashMap<String, String>;
 
 #[derive(Debug, Error)]
+#[non_exhaustive]
 pub enum EvaluationError {
     #[error("Undefined variable ${0} {1}")]
     UndefinedVariable(String, String),
