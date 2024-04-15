@@ -19,7 +19,7 @@ categories = ["config", "parser-implementations"]
 thiserror = "1.0.56"
 
 [dev-dependencies]
-rstest = "0.18.2"
+rstest = "0.19.0"
 serde = {version = "1.0.195", features = ["derive"]}
 serde_json = "1.0.111"
 walkdir = "2.4.0"
