@@ -8,8 +8,8 @@ use parser::{parse, ParseError};
 use thiserror::Error;
 
 pub mod env;
-mod evaluator;
-mod parser;
+pub mod evaluator;
+pub mod parser;
 #[cfg(test)]
 mod test_utils;
 mod tokenizer;
